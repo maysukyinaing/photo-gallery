@@ -126,10 +126,10 @@ export class PhotoService {
     this.photos.splice(position, 1);
 
     // Update photos array cache by overwriting the existing photo array
-    await Preferences.set({
-      key: this.PHOTO_STORAGE,
-      value: JSON.stringify(this.photos)
-    });
+     await Preferences.set({
+       key: this.PHOTO_STORAGE,
+       value: JSON.stringify(this.photos)
+     });
 
     // delete photo file from filesystem
     const filename = photo.filepath
